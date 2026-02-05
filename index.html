@@ -62,22 +62,66 @@
             color: #e8f5e8;
         }
 
-        .hero {
-            background: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=600&fit=crop') no-repeat center center/cover;
-            height: 100vh;
+            .hero {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 50%, #FF9800 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&opacity=0.1') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 1;
         }
 
         .hero-content {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 50px;
-            border-radius: 10px;
-            max-width: 800px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .hero h1 {
@@ -209,6 +253,19 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -227,9 +284,14 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to Yoga Chittagong</h1>
-            <p>Discover inner peace and physical wellness through our expert-led yoga classes in Chattogram. Join our community and transform your life.</p>
-            <a href="#contact" class="btn">Get Started Today</a>
+            <div class="hero-text">
+                <h1>Welcome to Yoga Chittagong</h1>
+                <p>Discover inner peace and physical wellness through our expert-led yoga classes in Chattogram. Join our community and transform your life.</p>
+                <a href="#contact" class="btn">Get Started Today</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" alt="Yoga practice at Yoga Chittagong">
+            </div>
         </div>
     </section>
 
